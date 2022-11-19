@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    float r, length, width, base_length ,height;
+    const float pi = 3.14;                                                               //notice using (.)not (,) 
+        
+    cout << " a - circle area \n ";
+    cout << " b - rectang#include < iostream >
+le area \n ";
+    cout << " c - triangle area \n ";
+    cout << " d - quit \n ";
+
+    char x;
+    cout << " please enter a character \n";
+    cin >> x;
+     
+    switch (x)                                                                              //there is no (;) here ...my error
+    {
+    case 'a':cout<<"please enter radious\n";
+        cin >> r;
+        cout << pi * r * r <<endl;                                       //notice that the equation is put here .. not before the switch
+    break;
+
+    case 'b': cout <<" please enter length & width \n";
+        cin >> length >> width;                                                          // notice not using (,) during cin ..
+        cout << length * width <<endl;
+    break;
+
+    case 'c': cout << " please enter base length & height \n";
+        cin >> base_length >> height;
+        cout << 0.5 * height * base_length <<endl;
+    break;
+
+    case 'd': cout << " quit \n";
+    break;
+    default:cout << " error \n";
+    }
+
+    system("pause");
+    return 0;
+}

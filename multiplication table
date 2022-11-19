@@ -1,0 +1,17 @@
+#include < iostream >
+using namespace std;
+int main()
+{
+	for (int i = 1; i <= 12; i++)
+	{
+		for (int k = i ; k <= 12; k++)         // k = i ... to start with (1*1),(2*2) , (3*3)  etc...
+		{
+			cout << i<<"*" << k << "="  <<i * k << endl;            // the second for is responsible for the cout
+		};
+		cout << endl;                                  // it is here to separate eacch two tables
+	};
+	
+
+	system(" pause ");
+	return 0;
+}

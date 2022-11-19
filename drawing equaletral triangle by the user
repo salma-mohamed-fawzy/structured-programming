@@ -1,0 +1,29 @@
+#include < iostream >
+using namespace std;
+int main()
+{
+	int x;
+	cout << " please enter size of triangle \n";
+	cin >> x;
+
+	for (int i = 1; i <= x; i++)                // respnsible for number of lines  //("<" +  no spaces here  +  "=")
+	{
+
+		for (int j = x; j >=i ; j--)             // responsible for spaces    
+		{
+			cout << "  ";
+		}
+
+		for (int s = 1; s <= i; s++)
+		{
+			cout << " *  ";
+
+
+			
+		}                                     //necessaryyyyyyyyy _ my error
+		cout << endl;
+	}
+
+	system(" pause ");
+	return 0;
+}

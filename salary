@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double gross_salary, the_hours_work, hourly_rate;
+	cout << "Enter number of your hours work \n";
+	cin >> the_hours_work;
+
+	cout << "Enter your hourly rate \n";
+	cin >> hourly_rate;
+
+	gross_salary = the_hours_work * hourly_rate;
+	double taxes = gross_salary *0.15;                          // 15/100 is wrong but 0.15 is right
+	double net_salary = gross_salary - taxes;
+
+	cout << "Gross salary equal " << gross_salary << " pounds \n";
+	 
+	cout << "Net salary equal " << net_salary << " pounds \n";
+
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,29 @@
+#include < iostream >
+using namespace std;
+int main()
+{
+	int num1;
+	int num2;
+	cout << " please enter 2 numbers\n";
+	cin >> num1 >> num2;
+
+	char x;
+	cout << " please enter the character\n";
+	cin >> x;                                           // x should have cin (my error)
+	switch (x)                                          //write switch then the  (variable) ... revise switch again
+	{
+	case '+': cout << num1 + num2 << endl;             //no destaces in the single quotes such as ' x '...(my error)
+		break;
+	case '-': cout << num1 - num2 << endl;
+		break;
+	case'*': cout << num1 * num2 << endl;
+		break;
+	case '/': cout << num1 / num2 << endl;
+		break;
+	default: cout << "error" << endl;
+
+	}
+	system(" pause");
+	return 0;
+
+}

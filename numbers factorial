@@ -1,0 +1,30 @@
+#include < iostream >
+using namespace std;
+int main()
+{
+	int x;
+	cout << " please enter number \n";
+	cin >> x;
+	 
+
+	while (x < 0)
+	{
+		cout << " please enter positive number \n";     //this code because we donot want any negative numbeers 
+		cin >> x;
+	}
+
+
+	int fact = 1;                            //we used (1) here because it is multiplication ..in addition we use (0)
+	for  (int i=x ; i>0 ; i--)                    //donot forget the type of variable
+		{
+			cout << i << "*" ;                      //this code is to print the factors such as (3*2*1)    
+			fact = fact * i;
+
+		};
+
+		cout << " the factorial of number is " << fact << endl;
+
+
+	system("pause");
+	return 0;
+}

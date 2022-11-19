@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	double num1;
+	double num2;
+
+	cout << "please enter two numbers \n ";
+	cin >> num1 >> num2;
+
+	double sum = num1 + num2;
+	cout << "the addition result equal " << sum << endl;
+
+	double difference = num1 - num2;
+	cout << "the subtraction result equal " << difference << endl;
+
+	double product = num1 * num2;
+	cout << " the multiplication result equal " << product << endl;
+
+	double quotient = num1 / num2;
+	cout << "the division result equal " << quotient << endl;
+
+	system("pause");
+	return 0;
+}

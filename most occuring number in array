@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int nums[8] = {4 , 5 , 9 , 12 , 9 , 22, 45 , 7 }; 
+	int count , max = 2 ;
+	for (int i = 0; i <= 7; i++)
+	{
+		count = 0;
+		for (int j = 0; j <= 7; j++)
+		{
+			if (nums[i] == nums[j])
+				count++;
+			if (count >= max)
+				max = nums[i];
+		}
+	}
+	cout << " the number of most occuring is " << max << endl ;
+
+	system ("pause");
+	return 0;
+}

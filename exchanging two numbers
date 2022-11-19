@@ -1,0 +1,20 @@
+# include <iostream>
+using namespace std;
+int main()
+{
+	int A , B ;       //input
+	cout << "please enter the two numbers " << endl;
+	cout << " A= " << endl ;
+	cin >> A ;
+	cout << "B= " << endl ; 
+	cin >> B ;
+
+	int C = A , D = B ;        //process
+	B = C;
+	A = D;
+	cout << " the value of A equal " << A <<endl;        //output
+	cout << " the value of B equal " << B << endl;
+
+	system(" pause") ;
+	return 0;
+}

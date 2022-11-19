@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y, z;
+	cout << " please enter three numbers\n";
+	cin >> x >> y >> z;
+	if (x > y&& x > z)                                  //if doesn't take ;
+		cout << " the greatest is" << x << "\n";
+	else if (y > x&& y > z)                         	//else if doesn't take ;
+	cout << " the greatest is " << y << "\n";
+	else
+		cout << " the greatest is" <<z << "\n";
+	system ("pause");
+	return 0;
+}

@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int physics, chemistry, biology, mathematics,computer;
+	cout << " please enter your degree in physics\n";
+	cin >> physics;
+	cout << " please enter your degree in chemistry\n";
+	cin >> chemistry;
+	cout << " please enter your degree in  biology\n";
+	cin >> biology;
+	cout << " please enter your degree in mathematics\n";
+	cin >> mathematics;
+	cout << " please enter your degree in computer\n";
+	cin >> computer;
+	float percentage;
+	percentage = ((physics + chemistry + biology + mathematics + computer) / 5) * 100;
+	
+		if (percentage >= 90 && percentage < 100)
+		{
+			cout << " the grade is A \n";
+		}
+		else if (percentage >= 80 && percentage < 90)
+		{
+			cout << " the grade is B \n";
+		}
+		else if (percentage >= 70 && percentage < 80)
+		{
+			cout << " the grade is c \n";
+		}
+		else if (percentage >= 60 && percentage < 70)
+		{
+			cout << " the grade is D \n";
+		}
+		else if (percentage >= 40 && percentage < 60)
+		{
+			cout << " the grade is E \n";
+		}
+		else 
+			cout << " the grade is F \n";
+	system("pause");
+	return 0;
+}

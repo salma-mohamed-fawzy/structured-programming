@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int radious,diameter,area,pi=3.14 ;
+	cout << "please enter radious \n";
+	cin >> radious;
+
+	diameter = 2 * radious;
+	cout << "diameter=" << diameter<<"\n";
+	area = 3.14 * radious * radious;
+	cout << "area=" << area<<"\n";
+	system(" pause ");
+	return 0;
+}

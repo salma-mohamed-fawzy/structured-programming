@@ -1,0 +1,342 @@
+#include <iostream>
+#include <string>
+using namespace std;
+struct login             //this struct is for logging in the system
+{
+    string name;
+    int password = 0;
+    int ID = 0;
+};
+struct reservation   /*this struct is for the information of the reservation
+
+such as the type of the ticket- the class 1,2or3 - the place of the chair next to window or not */
+{
+    string ticket_type;
+    int c_las = 0;
+    string chair_p;
+};
+void tickettype(string t_type, reservation passenger[100])  /*typethe ticket,going only or going and coming*/
+{
+    int count;
+    for (int i = 5; i <= 100; i++)
+    {
+        count = 0;
+        cout << " which type of tickkets do you want?(going only or going&coming)\n";
+        cin >> passenger[i].ticket_type;
+        if (passenger[i].ticket_type == "going only")
+            cout << " you will pay half  of the price\n";
+
+        else if (passenger[i].ticket_type == "going&coming")
+            cout << " you will pay the full price\n";
+        else
+            cout << " write correctly, please\n";
+        count = count + 1;
+        if (count == 1)
+            cout << " your log up has succeeded\n";
+        i = 100;
+    }
+}
+
+int class_fun(reservation passenger[100], int c_lass) /*for the class: first(1),second(2),orthird(3) class*/
+{
+    int count;
+    for (int i = 5; i <= 100; i++)
+    {
+        count = 0;
+        cout << "which class do you want?\n";
+        cin >> passenger[i].c_las;
+        c_lass = passenger[i].c_las;
+        count = count + 1;
+        if (count == 1)
+            cout << " your log up has succeeded\n";
+        i = 100;
+    }
+    return c_lass;
+}
+
+void chair_ser(reservation passenger[100]) /*to ask if the chair is next to window or not*/
+{
+    int count;
+    for (int i = 5; i <= 100; i++)
+    {
+        count = 0;
+        cout << " do you want you book next to window?(yes/no)\n";
+        cin >> passenger[i].chair_p;
+        if (passenger[i].chair_p == "yes")
+            cout << " then you might pay 10$ for this service\n";
+        else if (passenger[i].chair_p == "no")
+            cout << " ok,we wish you were happy\n";
+        else
+            cout << " wrong choice\n";
+        count = count + 1;
+        if (count == 1)
+            cout << " your log up has succeeded\n";
+        i = 100;
+    }
+}
+
+int pass_fun(int p_password)     /*password function*/
+{
+    cout << "please enter your passwod (only numbers, please)\n";
+    cin >> p_password;
+    return p_password;
+}
+string name_fun(string p_name)
+{
+    cout << "please enter your name\n";
+    cin >> p_name;
+    return p_name;
+}
+void log_up_fun(login people[100])  /*for logging up for the first time*/
+{
+    people[0].name = "Salma";
+    people[0].password = 1234;
+    people[0].ID = 1;
+
+    people[1].name = "Mohamed";
+    people[1].password = 1111;
+    people[1].ID = 2;
+
+    people[2].name = "sara";
+    people[2].password = 2222;
+    people[2].ID = 3;
+
+    people[3].name = "mahmoud";
+    people[3].password = 0000;
+    people[3].ID = 4;
+
+    people[4].name = "yousef";
+    people[4].password = 3000;
+    people[4].ID = 5;
+    int ID;
+    int count;
+    for (int i = 0; i <= 100; i++)
+    {
+        if (people[i].ID == 0)
+        {
+            count = 0;
+            cout << "log up, please\n";
+            cout << "enter your name\n";
+            cin >> people[i].name;
+            cout << "enter your password\n";
+            cin >> people[i].password;
+            ID = people[i].ID + i;
+            cout << "your ID is " << " " << ID << endl;
+            count = count + 1;
+            if (count == 1)
+                cout << " your log up has succeeded\n";
+            i = 100;
+        }
+    }
+
+}
+void login_regesteration(string x, login people[100], int ID, string n, string n_name, int p, int n_pass)
+/*for logging in but not for the first time*/
+{
+    int count;
+    for (int i = 5; i <= 100; i++)
+    {
+        count = 0;
+        cout << " your name (enter characters only, please):-\n";
+        cin >> people[i].name;
+        cout << " your password (enter numbers only, please) :-\n";
+        cin >> people[i].password;
+        cout << " your ID :-\n";
+        cin >> people[i].ID;
+        if (people[i].ID >= 6)
+        {
+            cout << "you aren't registered\n";
+            log_up_fun(people);
+        }
+        count = count + 1;
+        if (count == 1)
+            cout << " your log up has succeeded\n";
+        i = 100;
+    }
+}
+float changingtime(float x, float y)  /*for changing the time of the journey*/
+{
+    cout << "when is your current journey?\n";
+    cin >> x;
+    cout << "what is the time that you want?\n";
+    cin >> y;
+    return y;
+}
+void bookingticket(string x, int y)
+{
+    cout << "please enter your full name\n";
+    cin >> x;
+    cout << "please enter your password (characters only)\n";
+    cin >> y;
+}
+
+void PaymentMethods(char x)              /*for the different ways of payment*/
+{
+    cout << "how will you pay, write the number of the wanted method\n";
+    cout << " 1- by credit card\n";
+    cout << " 2- cash\n";
+    cout << " 3- from your bank account\n";
+    cout << " 4- by visa\n";
+
+    cin >> x;
+    switch (x)
+    {
+    case '1': cout << " then, you will pay by credit card\n";
+        break;
+    case '2': cout << " then, you will pay in cash\n";
+        break;
+    case '3': cout << " then, you will pay from your bank account\n";
+        break;
+    case '4': cout << " then, you will pay by visa\n";
+        break;
+    default: cout << "  wrong number\n";
+
+    }
+}
+string ser_report(string x)  /*for sending areport about the service*/
+{
+    cout << "can you tell us your feedback about our services\n";
+    cin >> x;
+    return x;
+}
+
+void cancellingjour(string x, char y, float cur_T, float wan_T, string b_n, int b_p, char p_m, int s, string f)
+/*for cancelling the journey*/
+{
+    cout << " Are you sure you want to cancel reservation\n";
+    cin >> x;
+    if (x == "yes")
+        cout << "thanks for visiting us we hope seeing you again \n";
+
+    else if (x == "no")
+        cout << " Then, what is the service that you want\n";
+    cout << " 1- changing the journey time\n";
+    cout << " 2- booking a ticket\n";
+    cout << " 3- send a report\n";
+
+    cin >> y;
+    switch (y)
+    {
+    case '1': cout << changingtime(cur_T, wan_T);
+        break;
+    case '2': bookingticket(b_n, b_p);
+        break;
+    case '3': cout << ser_report(f);
+        break;
+    default: cout << " wrong character\n";
+        break;
+    }
+}
+int main()
+{
+    string name;
+    string new_name;
+    int new_password = 0;
+    string cho;
+    int ID = 0;
+    string n;
+    int p = 0;
+    login people[100];
+    string ticket_type;
+    string x;
+    cout << " \n welcome to our bus services\n";
+    cout << " do you have a previous reservation\n";
+    cin >> x;
+    if (x == "yes")
+        login_regesteration(cho, people, ID, n, new_name, p, new_password);
+    else if (x == "no")
+        log_up_fun(people);
+    else
+        cout << "wrong choice\n";
+    while (x != "yes" && x != "no")
+    {
+        cout << " please, choose again\n";
+        cout << " do you have a previous reservation\n";
+        cin >> x;
+        if (x == "yes")
+            login_regesteration(cho, people, ID, n, new_name, p, new_password);
+        else if (x == "no")
+            log_up_fun(people);
+    };
+    /*all off the previous code is for logging in or up*/
+    reservation passenger[100];
+    float current_T = 0, wanted_T = 0;
+    string bok_name;
+    int bok_pass = 0;
+    string i;
+    char j = 'j';
+    char p_method = 'p';
+    int c = 0;
+    string feedback;
+    int c_lass = 0;
+    string ch_s;
+    cout << "enter the number of the service you want\n";
+    cout << " 1- changing the journey time\n";
+    cout << " 2- booking a ticket\n";
+    cout << " 3- cancelling the journey\n";
+    cout << " 4- sending a report about your opinion\n";
+
+
+    char ch;
+    cin >> ch;
+    switch (ch)
+    {
+    case '1': cout << changingtime(current_T, wanted_T);
+        break;
+    case '2': bookingticket(bok_name, bok_pass);
+        break;
+    case '3': cancellingjour(i, j, current_T, wanted_T, bok_name, bok_pass, p_method, c, feedback);
+        break;
+    case '4': cout << ser_report(feedback);
+        break;
+    default: cout << " wrong character\n";
+        break;
+    }
+
+    cout << " \n please enter the information of the services that you want\n";
+    {
+        tickettype(ticket_type, passenger);
+        class_fun(passenger, c_lass);
+        chair_ser(passenger);
+    }
+    PaymentMethods(p_method);
+
+    char d;
+    cout << " please enter the number of the journey that you want?\n";
+    cout << " 1- from cairo to aswan\n ";
+    cout << " 2- from cairo to sharm-elsheikh ";
+    cout << " 3- from cairo to kafr-elsheikh ";
+    cout << " 4- from cairo to alexandria ";
+    cout << " 5- from benha to aswan ";
+    cout << " 6- from benha to sharm-elsheikh ";
+    cout << " 7- from benha to kafr-elsheikh ";
+    cout << " 8- from benha to alexandria ";
+    cin >> d;
+    switch (d)
+    {
+    case '1': cout << "from cairo to aswan " << " &the price is 200" << endl;
+        break;
+    case '2': cout << "from cairo to sharm-elsheikh " << " &the price is 300" << endl;
+        break;
+    case'3': cout << "from cairo to kafr-elsheikh" << " &the price is 400" << endl;
+        break;
+    case '4': cout << "from cairo to alexandria " << " &the price is 500" << endl;
+        break;
+    case '5': cout << "from benha to aswan " << " &the price is 250" << endl;
+        break;
+    case '6': cout << "from benha to sharm-elsheikh " << " &the price is 350" << endl;
+        break;
+    case'7': cout << "from benha to kafr-elsheikh" << " &the price is 450" << endl;
+        break;
+    case '8': cout << "from benha to alexandria " << " &the price is 550" << endl;
+        break;
+
+    default: cout << "wrong number" << endl;
+    }
+    cout << " thank you for visiting us and we hope you enjoy your time\n";
+
+    system("pause");
+    return 0;
+}
+
+
